@@ -1,0 +1,54 @@
+version: "3.9"
+
+services:
+
+  dvwa:
+    image: sagikazarmark/dvwa
+    container_name: dvwa
+    ports:
+      - "8081:80"
+    restart: unless-stopped
+
+  ssrf-lab:
+    image: youyouorz/ssrf-vulnerable-lab
+    container_name: ssrf-lab
+    ports:
+      - "9000:80"
+    restart: unless-stopped
+
+  dvws:
+    image: tssoffsec/dvws
+    container_name: dvws
+    ports:
+      - "8082:80"
+      - "8088:8080"
+    restart: unless-stopped
+
+  bwapp:
+    image: raesene/bwapp
+    container_name: bwapp
+    ports:
+      - "8000:80"
+    restart: unless-stopped
+
+  webgoat:
+    image: webgoat/webgoat
+    container_name: webgoat
+    ports:
+      - "127.0.0.1:9001:8080"
+      - "127.0.0.1:9090:9090"
+    restart: unless-stopped
+
+  juice-shop:
+    image: bkimminich/juice-shop
+    container_name: juice-shop
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+  sqli-labs:
+    image: acgpiano/sqli-labs:latest
+    container_name: sqli-labs
+    ports:
+      - "8083:80"
+    restart: unless-stopped

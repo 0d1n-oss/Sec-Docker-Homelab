@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+
+  traefik:
+    image: traefik:v3.0
+    container_name: traefik
+    command:
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      # Eliminamos ACME (Let's Encrypt) porque no necesitamos certificados públicos
+    ports:
+      - "127.0.0.1:80:80"       # Solo accesible desde localhost
+      - "127.0.0.1:443:443"     # Solo accesible desde localhost
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+  portainer:
+    image: portainer/portainer-ce
+    container_name: portainer
+    labels:
+      - "traefik.http.routers.portainer.rule=Host(`portainer.local`)"
+      - "traefik.http.routers.portainer.entrypoints=web"
+    restart: unless-stopped
+
+  kuma:
+    image: louislam/uptime-kuma
+    container_name: kuma
+    labels:
+      - "traefik.http.routers.kuma.rule=Host(`kuma.local`)"
+      - "traefik.http.routers.kuma.entrypoints=web"
+    restart: unless-stopped
