@@ -4,7 +4,7 @@ Esto es solo una configuracion para un servidor de cyberseguridad, pudiendo prac
 
 El lab consta de un equipo con un GNU linux (kali linux) adaptado con herramientas de cyberseguridad, siendo un entorno para un uso comodo respesto a resolver CTF, explorar vulnerabilidades, probar tacticas de pentesting, y todo respecto a hacking.
 
-![logo](https://www.github.com/0d1n-oss/Sec-Docker-Homelab/blob/main/images/logo.png)
+![logo](https://github.com/0d1n-oss/Sec-Docker-Homelab/blob/main/images/logo.png)
 
 ---
 
