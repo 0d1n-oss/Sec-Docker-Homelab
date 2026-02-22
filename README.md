@@ -94,7 +94,7 @@ Instalando las imagenes vulnerables y las imagenes atacantes, teniendo el lab co
 > Durante la instalacion automatica hay que seleccionar el contenedor atacante que se desea.
 > Hay varias imagenes recomendadas, aunque solo son eso, recomendaciones. 
 
-![install](https://github.ycom/0d1n-oss/Sec-Docker-Homelab/blob/main/images/install.png)
+![install](https://github.com/0d1n-oss/Sec-Docker-Homelab/blob/main/images/install.png)
 
 ### Manual
 
