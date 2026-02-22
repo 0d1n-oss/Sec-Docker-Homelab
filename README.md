@@ -86,17 +86,29 @@ sudo systemctl start docker
 
 ## Despliegue
 
+### Automatico
+Usando el archivo [**run.sh**](run.sh) se puede instalar el Homelab de manera automatica.
+Instalando las imagenes vulnerables y las imagenes atacantes, teniendo el lab configurado y listo para usarse.
+
+> [Nota]
+> Durante la instalacion automatica hay que seleccionar el contenedor atacante que se desea.
+> Hay varias imagenes recomendadas, aunque solo son eso, recomendaciones. 
+
+![install](https://github.ycom/0d1n-oss/Sec-Docker-Homelab/blob/main/images/install.png)
+
+### Manual
+
 Para desplegar el systema se usa el archivo [**system.yml**](system.yml), el cual contiene los servicios de monitoreo y demas.
 Estos servicios monitorean y manipulan el sistema de manera mas comoda.
 ``` bash
-docker-compose -f system.yml -d
+docker-compose -f system.yml up -d
 ```
 
 El archivo [**vulns.yml**](vulns.yml) contiene las imagenes vulnerables listas para desplegar.
 En este se encuentran todas las imagenes, puertos y demas recursos para desplegarse de manera efectiva y rapida.
 
 ``` bash
-docker-compose -f vulns.yml -d
+docker-compose -f vulns.yml up -d
 ```
 
 En caso de querer desplegar los servicios de manera individual el archivo images.md contiene todas las imagenes, descripcones y comandos para desplegarse.
