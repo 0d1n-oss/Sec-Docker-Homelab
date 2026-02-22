@@ -4,6 +4,8 @@ Esto es solo una configuracion para un servidor de cyberseguridad, pudiendo prac
 
 El lab consta de un equipo con un GNU linux (kali linux) adaptado con herramientas de cyberseguridad, siendo un entorno para un uso comodo respesto a resolver CTF, explorar vulnerabilidades, probar tacticas de pentesting, y todo respecto a hacking.
 
+---
+
 ## Recursos
 Este lab esta creado para desplegarse en forma de servidor, siendo su principal caracteristica el poder desplegar todo desde docker, pudiendo usarse desde cualquier lugar que pueda correr docker.
 
@@ -14,6 +16,8 @@ Aunque en este caso esta centrado en un GNU linux basado en debian (siendo apto 
 -   4 Gigas de ram
 -   128 Gigas de disco SSD
 -   SO Kali linux
+
+---
 
 ## Instalacion
 
@@ -27,7 +31,7 @@ apt install -y docker.io docker-compose
 
 # habilitar docker en el sistema
 systemctl enable docker
-
+systemctl start docker
 ```
 
 #### Openssh
@@ -45,7 +49,7 @@ systemctl enable ssh
 #### Kuma
 
 ``` bash
-louislam/uptime-kuma
+docker pull louislam/uptime-kuma
 ```
 
 #### Portainer
@@ -60,7 +64,7 @@ docker pull portainer/portainer
 docker pull traefik/traefik
 ```
 
-![programs](https://github.com/0d1n-oss/WriteUps/blob/main/Sec-Docker-Homelab/images/programs.png)
+![programs](https://github.com/0d1n-oss/Sec-Docker-Homelab/blob/main/images/programs.png)
 
 ## Configuracion extra
 
@@ -76,6 +80,7 @@ sudo systemctl start ssh
 sudo systemctl enable docker
 sudo systemctl start docker
 ```
+---
 
 ## Despliegue
 
@@ -94,6 +99,8 @@ docker-compose -f vulns.yml -d
 
 En caso de querer desplegar los servicios de manera individual el archivo images.md contiene todas las imagenes, descripcones y comandos para desplegarse.
 Asegurando el desplegar las imagenes de manera controlada.
+
+---
 
 ## Acceso
 
@@ -117,6 +124,8 @@ Agrega las direcciones con sus dominios.
 
 Guarda con Ctrl + X
 
+---
+
 ### Windows
 
 Editar el archivo hosts con el blog de notas.
@@ -135,6 +144,8 @@ Agrega las mismas líneas que en Linux, usando la IP de tu servidor (localhost s
 Guarda el archivo.
 
 Abre el navegador y prueba http://portainer.local o http://kuma.local.
+
+---
 
 ### macOS
 
@@ -163,7 +174,9 @@ Abre navegador y accede a http://portainer.local.
 
 | Portainer | Kuma |
 |----------|----------|
-| ![portainer](https://github.com/0d1n-oss/WriteUps/blob/main/Sec-Docker-Homelab/images/portainer.png) | ![kuma](https://github.com/0d1n-oss/WriteUps/blob/main/Sec-Docker-Homelab/images/kuma.png) |
+| ![portainer](https://github.com/0d1n-oss/Sec-Docker-Homelab/blob/main/images/portainer.png) | ![kuma](https://github.com/0d1n-oss/Sec-Docker-Homelab/blob/main/images/kuma.png) |
+
+---
 
 ## Maquinas atacantes.
 
@@ -188,4 +201,4 @@ sudo docker run -d --name pentester-desktop \
   pentester:latest
 ```
 
-![kali](https://github.com/0d1n-oss/WriteUps/blob/main/Sec-Docker-Homelab/images/kali.png)
+![kali](https://github.com/0d1n-oss/Sec-Docker-Homelab/blob/main/images/kali.png)
