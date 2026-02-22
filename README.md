@@ -86,13 +86,13 @@ sudo systemctl start docker
 
 ## Despliegue
 
-Para desplegar el systema se usa el archivo (system.yml)[system.yml], el cual contiene los servicios de monitoreo y demas.
+Para desplegar el systema se usa el archivo [**system.yml**](system.yml), el cual contiene los servicios de monitoreo y demas.
 Estos servicios monitorean y manipulan el sistema de manera mas comoda.
 ``` bash
 docker-compose -f system.yml -d
 ```
 
-El archivo (vulns.yml)[vulns.yml] contiene las imagenes vulnerables listas para desplegar.
+El archivo [**vulns.yml**](vulns.yml) contiene las imagenes vulnerables listas para desplegar.
 En este se encuentran todas las imagenes, puertos y demas recursos para desplegarse de manera efectiva y rapida.
 
 ``` bash
@@ -185,7 +185,7 @@ Abre navegador y accede a http://portainer.local.
 Todos los contenedores pueden ser resueltos y se puede interactuar con las webs y demas usando el entorno nativo.
 Pero para mayor comodidad se puede desplegar un contenedor atacante, ya sea uno con las herramientas necesarias, un contenedor vacio configurable o uno con un entorno completo.
 
-Se pueden encontrar otras opciones recomendables para desplegarse en este lab en el archivo (pentesters.md)[pentesters.md]
+Se pueden encontrar otras opciones recomendables para desplegarse en este lab en el archivo [**pentesters.md**](pentesters.md)
 Este archivo muestra ejemplos de despliegue de imagenes basicas, con entornos graficos, herramientas configuradas, etc...
 
 La imagen **pentest** es una imagen de kali configurada para pruebas de penetracion.
